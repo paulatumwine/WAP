@@ -57,7 +57,7 @@ b(); // 10*/
 }
 f();*/
 
-/* var x = 10;
+var x = 10;
 function main() {
 	console.log("<br>x1 is " + x); // undefined -- how???
 	x = 20;
@@ -66,17 +66,17 @@ function main() {
 		let x = 30; // x=30;
 		console.log("<br>x3 is " + x); // 30
 	}
-	console.log("<br>x4 is " + x); // 30 -- no block scope for the if statement apparently when we used the var keyword
-	                               // if you use let, then block scope is a real thing :-)
-	var x = 40; // x=40;
+	console.log("<br>x4 is " + x); // x4 is 20 with let, 30 with var -- no block scope for the if statement apparently when we used the var keyword
+	                               // if you use let, then block scope is a real thing; even for if blocks!!! :-)
+	var x = 40;
 	var f = function(x) {
-		console.log("<br>x5 is " + x);  // 40
+		console.log("<br>x5 is " + x);  // 50
 	}
 	f(50); // 50
 	console.log("<br>x6 is " + x); // 40
 }
 main();
-console.log("<br>x7 is " + x); // 10 */
+console.log("<br>x7 is " + x); // 10
 
 /* sayHi(); 
 function sayHi() { 

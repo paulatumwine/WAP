@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Paul :: Web Application Programming</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		body {
+			width: 80%;
+			margin: auto;
+		}
+        ol {
+            /* padding-left: 0; */
+            list-style-type: lower-alpha;
+        }
+	</style>
+</head>
+
+<body>
+    <h1>Lab 7</h1>
+    <h5>Question 1 Output</h5>
+    <p>undefined</p>
+    <p>8</p>
+    <p>8</p>
+    <p>9</p>
+    <p>10</p>
+    <p>1</p>
+
+    <h5>Question 2</h5>
+    <p>Global Scope refers to the overall execution context/environment within which all of a program's variables, functions, and classes or objects are defined.</p>
+    <p>Local Scope refers to the execution context within a function or block.</p>
+
+    <h5>Question 3</h5>
+    <p>
+        <ol>
+            <li>Do statements in Scope A have access to variables defined in Scope B and C? - <b><em>No</em></b></li>
+            <li>Do statements in Scope B have access to variables defined in Scope A? - <b><em>Yes</em></b></li>
+            <li>Do statements in Scope B have access to variables defined in Scope C? - <b><em>No</em></b></li>
+            <li>Do statements in Scope C have access to variables defined in Scope A? - <b><em>Yes</em></b></li>
+            <li>Do statements in Scope C have access to variables defined in Scope B? - <b><em>Yes</em></b></li>
+        </ol>
+    </p>
+
+    <h5>Question 4 Output</h5>
+    <p>81</p>
+    <p>25</p>
+
+    <h5>Question 5</h5>
+    <p>The alert prints out 10</p>
+
+    <h5>Question 7</h5>
+    <p>In the definition of <em>add()</em> given, counter is the "free" variable.</p>
+    <p>In the context of a function closure, a "free" variable is a variable that is neither defined within the "closing" function, nor passed as an argument to it. It is however defined within an enclosing scope and therefore visible to the "closing" function.</p>
+
+    <h5>Question 9</h5>
+    <p>Wrapping all the function and variable declarations would remove them from the Global namespace.</p>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
