@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+
+		<title>Paul :: Web Application Programming</title>
+
+		<link rel="stylesheet" type="text/css" href="styleme.css"/>
+		<style>
+			body {
+				background: none
+			}
+			section {
+				width: 90%;
+				margin: 68px;
+			}
+			section > header {
+				display: block;
+			}
+			section > div {
+				display: flex;
+				height: 346px;
+			}
+			header {
+				font-family: "Arial,Helvetica,freesans,sans-serif;";
+				color: #4a4a4a;
+				font-size: 1.375rem;
+			}
+			header > span {
+				font-weight: bold;
+			}
+			header > date {
+				font-weight: lighter;
+			}
+			aside {
+				display: block;
+				width: 50%;
+			}
+			aside > img {
+				width: 100%;
+				height: 100%;
+			}
+			main {
+				width: 50%;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 168px 168px;
+				grid-gap: 9px 16px;
+				padding-left: 16px;
+			}
+			main > img {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+	<section>
+		<header>
+			<span>Welcome to BBC.com</span>
+			<date style="float: right">Wednesday, October 30</date>
+		</header>
+		<div>
+			<aside>
+				<img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/E6CE/production/_109468095_tv057661056.jpg" alt="Fire">
+			</aside>
+			<main>
+				<img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/E6CE/production/_109468095_tv057661056.jpg" alt="Fire">
+				<img src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/141AA/production/_109464328_kolisi_gettindex.jpg" alt="South Africa's First Black Captain">
+				<img src="https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/11E82/production/_109464337_07_getty.jpg" alt="Thabo hands over Word Cup Trophy">
+				<img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/146DC/production/_109467638_6bf5b627-c06a-41c0-a8a7-2f81ea1074e1.jpg" alt="Fire">
+			</main>
+		</div>
+	</section>
+	</body>
+</html>

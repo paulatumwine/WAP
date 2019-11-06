@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+
+		<title>Paul :: Web Application Programming</title>
+		<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			  rel="stylesheet">
+		<style>
+			body {
+				height: 100%!important;
+				display: flex!important;
+				flex-direction: column!important;
+			}
+			nav {
+				flex-shrink: 0!important;
+			}
+			main {
+				margin: 24px 120px;
+				flex-shrink: 0!important;
+			}
+			footer {
+				margin-top: auto!important;
+				padding-top: 1rem!important;
+				padding-bottom: 1rem!important;
+			}
+			li > a {
+				border-left: 1px solid #fefefe;
+				padding: 0 2em !important;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="#">MUM Golden Dome Market ::: SRM System</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Suppliers</a>
+					</li>
+				</ul>
+				<span class="navbar-text" style="padding-right: 1em !important;">
+					Hello!
+			  	</span>
+				<button class="btn btn-light my-2 my-sm-0">Sign Out</button>
+			</div>
+		</nav>
+		<main>
+			<h4>New Product Form</h4>
+			<form class="needs-validation">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="productNumber">Product Number</label>
+						<input type="text" class="form-control" id="productNumber" aria-describedby="productNumber" placeholder="Product Number" pattern="(\w|\d)+">
+						<div class="invalid-feedback">
+							Please enter a Product Number
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="quantity">Quantity</label>
+						<input type="text" class="form-control" id="quantity" aria-describedby="quantity" placeholder="0">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" id="name" aria-describedby="name" placeholder="">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="supplier">Supplier</label>
+						<select class="custom-select" id="supplier">
+							<option selected>Select a supplier</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="unitPrice">Unit Price</label>
+						<input type="text" class="form-control" id="unitPrice" aria-describedby="unitPrice" placeholder="0.0">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="dateSupplied">Date Supplied</label>
+						<input type="text" class="form-control" id="dateSupplied" aria-describedby="dateSupplied" placeholder="yyyy-mm-dd">
+					</div>
+				</div>
+				<div class="form-group row float-right">
+					<div class="col-md-12">
+						<button type="button" class="btn btn-outline-secondary">Reset</button>
+						<button type="button" class="btn btn-outline-danger">Danger</button>
+						<button type="submit" class="btn btn-outline-primary">Add Product</button>
+					</div>
+				</div>
+			</form>
+		</main>
+		<footer>
+			<a href="http://validator.w3.org/check/referer">
+				<img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html validator"/>
+			</a>
+		</footer>
+	</body>
+</html>

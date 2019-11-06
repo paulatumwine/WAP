@@ -1,0 +1,59 @@
+body {
+    background: lemonchiffon;
+}
+
+h1 {
+    color: darkblue;
+    font-family: "Book Antiqua";
+}
+
+h2 {
+    color: cornflowerblue;
+    font-family: "Book Antiqua";
+}
+
+p {
+    font-family: "Century Gothic";
+}
+
+p::first-letter {
+    font-size: 1.5em;
+}
+
+img.profile {
+    border-radius: 50%;
+}
+
+img.mood {
+    width: 40vw;
+    height: 50vh;
+}
+
+ol {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+ul>li, ol>li {
+     font-family: "Century Gothic";
+ }
+
+ol>li {
+    list-style-type: lower-roman;
+}
+
+ul>li {
+    list-style-type: circle;
+}
+
+dl>dt {
+    color: hotpink;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
