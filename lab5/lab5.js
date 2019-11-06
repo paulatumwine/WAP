@@ -5,6 +5,7 @@ function max(a, b) {
     else 
         return b
 }
+console.log("-- NUMBER 1 --")
 console.log(max(10, 5))
 console.log(max(10, 15))
 
@@ -17,6 +18,7 @@ function maxOfThree(a, b, c) {
         largest = c
     return largest
 }
+console.log("-- NUMBER 2 --")
 console.log(maxOfThree(10, 5, 11))
 console.log(maxOfThree(10, 15, 11))
 
@@ -25,6 +27,7 @@ function isVowel(a) {
     const vowels = ['a', 'e', 'i', 'o', 'u']
     return vowels.includes(a)
 }
+console.log("-- NUMBER 3 --")
 console.log(isVowel('a'))
 console.log(isVowel('z'))
 
@@ -36,6 +39,7 @@ function sum(arr) {
     }
     return sum
 }
+console.log("-- NUMBER 4 --")
 console.log(sum([1,2,3,4]))
 
 function multiply(arr) {
@@ -55,6 +59,7 @@ function reverse(str) {
     }
     return reversed
 }
+console.log("-- NUMBER 5 --")
 console.log(reverse('jag testar'))
 
 // NUMBER 6
@@ -65,6 +70,7 @@ function findLongestWord(words) {
     });
     return longest.length
 }
+console.log("-- NUMBER 6 --")
 console.log(findLongestWord(['jag', 'testar']))
 
 // NUMBER 7
@@ -75,6 +81,7 @@ function filterLongWords(words, i) {
     });
     return longWords
 }
+console.log("-- NUMBER 7 --")
 console.log(filterLongWords(['jag', 'testar', 'jarod'], 4))
 
 
@@ -87,6 +94,7 @@ console.log(sum([1,2,3,4]))
 function multiply(arr = []) {
     return arr.reduce((a, b) => a * b, 1)
 }
+console.log("-- NUMBER 8 --")
 console.log(multiply([1,2,3,4]))
 
 // NUMBER 9 
@@ -102,6 +110,7 @@ function findSecondBiggest(arr = []) {
     }
     return biggest
 }
+console.log("-- NUMBER 9 --")
 console.log(findSecondBiggest([1,2,3,4,5]))
 console.log(findSecondBiggest([19,9,11,0,12]))
 
@@ -115,6 +124,7 @@ function printFibo(n, a, b) {
     }
     return fib
 }
+console.log("-- NUMBER 10 --")
 console.log(printFibo(0, 0, 1))
 console.log(printFibo(1, 0, 1))
 console.log(printFibo(2, 0, 1))
@@ -124,6 +134,7 @@ console.log(printFibo(10, 0, 1))
 
 // NUMBER 11
 function logValues() {
+    console.log("-- NUMBER 11 --")
     let form = document.getElementById("loginForm");
     console.log(form)
 
@@ -150,4 +161,10 @@ function alertValues() {
 }
 
 // NUMBER 12
-// See clock directory
+function startTime() {
+    var today = new Date()
+    var d = today.toDateString()
+    var t = today.toTimeString()
+    document.getElementById('timeContainer').innerHTML = d + " " + t
+    setTimeout(startTime, 500)
+}
