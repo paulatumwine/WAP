@@ -16,7 +16,7 @@ p {
     font-family: "Century Gothic";
 }
 
-p::first-letter {
+.about p::first-letter {
     font-size: 1.5em;
 }
 
