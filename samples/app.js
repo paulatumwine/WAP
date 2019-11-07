@@ -176,6 +176,23 @@ var b = setTimeout(function(){ console.log(3); }, 0);
 console.log(4); 
  */
 
+// An Object 
+var course = { 
+	coursename: 'Default', 
+	register: function() { 
+		return 'Register ' + this.coursename; 
+	} 
+}; 
+var mwp = Object.create(course); 
+mwp.coursename = 'MWP';
+mwp.other = 'General';
+console.log(mwp); // Object {coursename: "MWP"} 
+console.log(mwp.__proto__); // course Object 
+console.log(course.prototype); // undefined 
+console.log(mwp.prototype); // undefined
+console.log(mwp.register()); // Register MWP
+
+
 
  // By convention we use capital first letter for function constructor 
 function Course (coursename){ 

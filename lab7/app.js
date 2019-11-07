@@ -127,16 +127,46 @@
     console.log(Employee.getProps())
 
     console.log("-- QUESTION 11 --")
-    Employee.__proto__.address = "Default Address"
-    Employee.__proto__.getAdress = function() {
+    // Add public field address and methods 
+    Employee.address = "Default Address"
+    Employee.getAdress = function() {
         return this.address
     }
-    Employee.__proto__.setAddress = function(add) {
+    Employee.setAddress = function(add) {
         this.address = add
     }
-    Employee.__proto__.getAllProps = function() {
+
+    // debug stuff follows
+    Employee.getAllProps = function() {
         return Employee.getProps() + ", Address: " + this.address
     }
     Employee.setAddress('1000 N 4th St');
     console.log(Employee.getAllProps());
+
+    var e1 = Object.create(Employee)
+    console.log(e1.address + " - exists in e1.__proto__ (which is a reference to Employee) and not directly in e1")
+
+    e1.__proto__.phone = "Number" 
+    e1.__proto__.getPhone = function() {
+        return this.phone
+    }
+    e1.__proto__.setPhone = function(add) {
+        this.phone = add
+    }
+
+    var e2 = Object.create(Employee)
+    e2.setPhone("Numero")
+    console.log(e2.phone + " - field created on e1.__proto__ can be seen by subsequent sub-classes of Employee")
+
+    e2.weight = "50lbs"
+    e2.getWeight = function() {
+        return this.weight
+    }
+    e2.setWeight = function(wgt) {
+        this.weight = wgt
+    }
+    console.log(e2.getWeight() + " - function only exists in e2, and not in e2.__proto__")
+
+    var e3 = Object.create(Employee)
+    // console.log(e3.getWeight()) // function does not in this case
 }());
