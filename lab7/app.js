@@ -92,17 +92,9 @@
 (function () {
     console.log("-- QUESTION 10 --")
     var Employee = (function () {
-        var name
-        var age
-        var salary
-        var getName = function () {
-            return name
-        }
-        var getAge = function () {
-            return age
-        }
-        var getSalary = function () {
-            return salary
+        var name, age, salary
+        function log() { // debug 
+            return "Name: " + name + ", Age: " + age + ", Salary: " + salary
         }
         function setName(str) {
             name = str
@@ -114,35 +106,37 @@
             salary = salo
         }
         return {
-            getName: getName, // debug
-            getAge: getAge, // debug
-            getSalary: getSalary, // debug
+            getProps: log,
             setName: setName,
             setAge: setAge,
             setSalary: setSalary,
             increaseSalary: function (percentage) {
-                let increment = getSalary() * (percentage / 100)
-                setSalary(getSalary() + increment)
+                let increment = salary * (percentage / 100)
+                setSalary(salary + increment)
             },
             increaseAge: function (number) {
-                setAge(getAge() + number)
+                setAge(age + number)
             }
         }
     })();
-    Employee.setName("Paul")
-    console.log(Employee.getName())
-    Employee.setAge(18)
-    console.log(Employee.getAge())
-    Employee.setSalary(16000)
-    console.log(Employee.getSalary())
-    Employee.increaseAge(3)
-    console.log(Employee.getAge())
-    Employee.increaseSalary(10)
-    console.log(Employee.getSalary())
+    Employee.setName("Paul"); Employee.setAge(18); Employee.setSalary(16000); 
+    console.log(Employee.getProps())
+    Employee.increaseAge(3); 
+    console.log(Employee.getProps())
+    Employee.increaseSalary(10); 
+    console.log(Employee.getProps())
 
-    /* console.log("-- QUESTION 11 --")
-    var emp1 = new Employee()
-    emp1.prototype.getAddress = function () {
-        return 'Hi ' + this.university;
-    } */
+    console.log("-- QUESTION 11 --")
+    Employee.__proto__.address = "Default Address"
+    Employee.__proto__.getAdress = function() {
+        return this.address
+    }
+    Employee.__proto__.setAddress = function(add) {
+        this.address = add
+    }
+    Employee.__proto__.getAllProps = function() {
+        return Employee.getProps() + ", Address: " + this.address
+    }
+    Employee.setAddress('1000 N 4th St');
+    console.log(Employee.getAllProps());
 }());
