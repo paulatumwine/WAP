@@ -209,3 +209,37 @@ console.log(wap.__proto__); // Course.prototype
 console.log(wap instanceof Course); // true 
 console.log(Course.prototype.register); // function(){ ... }
 console.log(wap.register()); // Register WAP
+
+
+const person = {
+	name: "",
+	dob: new Date(),
+	age: 0,
+	getName: function() {
+		return name
+	},
+	setName: function(nm) {
+		this.name = nm
+	}
+}
+console.log(`Person name is ${person.name}\nAge is ${person.age}`)
+
+const john = Object.create(person)
+john.setName("John")
+john.age = 21
+john.dob = new Date(1998, 10, 9)
+console.log(`Person name is ${john.name}\nAge is ${john.age}`)
+
+const employee = Object.create(person)
+employee.salary = 0.0
+employee.hireDate = new Date()
+employee.doJob = function(jobTitle) {
+	console.log(`${this.name} is a ${jobTitle} who earns $${this.salary} in salary`)
+}
+
+const anna = Object.create(employee)
+anna.setName("Anna")
+anna.age = 25
+anna.dob = new Date(1995-12-3)
+anna.salary = 100000
+anna.doJob("Programmer")
