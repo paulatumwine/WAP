@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Paul :: Lab9 - Client-side Data Persistence using LocalStorage API</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		body {
+			width: 80%;
+			margin: auto;
+		}
+
+		ul {
+			margin-top: 1rem !important;
+		}
+
+		#clockContainer {
+			font-size: 1em;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Lab 9</h1>
+	<p id="clockContainer"></p>
+	<form id="addstudentform">
+		<div class="form-group">
+			<label for="studentid">Student ID</label>
+			<input type="text" class="form-control" id="studentid" aria-describedby="studentid"
+				placeholder="000-XX-XXXX" pattern="[0-9]{3}-[A-Z0-9]{2}-[A-Z0-9]{4}" required/>
+			<small id="studentid" class="form-text text-muted">Your unique student Identification number.</small>
+		</div>
+		<div class="form-group">
+			<label for="firstname">First Name</label>
+			<input type="test" class="form-control" id="firstname" placeholder="e.g. John" pattern="[a-zA-Z]+" required/>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	<ul class="list-group" id="users">
+		<li class="list-group-item active">Student Names</li>
+	</ul>
+</body>
+<script src="../lib/jquery.js"></script>
+<script src="./app.js"></script>
+
+</html>
