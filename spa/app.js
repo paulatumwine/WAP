@@ -9,7 +9,7 @@ $(function () {
 });
 
 function displayStudents() {
-    const url = `${window.location.origin}/spa/students.json`;
+    const url = window.location.href.replace("index.html", "students.json")
     $.ajax({
         url: url,
         type: "GET",
