@@ -5,6 +5,11 @@ $(function () {
 
     const form = $("#addstudentform")
     form.submit(captureValues, event)
+
+    let divs = $("div")
+    console.log(divs)
+    divs.css("background-color", "yellow")
+    $("body > p").css("background-color", "orange")
 });
 
 function initStudents() {

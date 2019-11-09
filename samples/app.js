@@ -243,3 +243,103 @@ anna.age = 25
 anna.dob = new Date(1995-12-3)
 anna.salary = 100000
 anna.doJob("Programmer")
+
+
+function Person(){ 
+	console.log(this); 
+	var year = '2016'; 	
+	this.university = 'MUM'; 
+	return this; // optional, implicit if left off
+} 
+var faculty = new Person(); // Person {university: "MUM"} – no year!
+Person.prototype.greet = function(){ // modifies __proto__ of all Person objs
+	return 'Hi ' + this.university; 
+} 
+console.log(faculty.greet()); // "Hi MUM"
+
+
+function a(){ 
+	console.log(this); 
+} 
+var b = { 
+	log: function(){ 
+		console.log(this); 
+	} 
+} 
+console.log(this); // this generally is window object
+a(); // a() is called by global window object (a is on window obj)
+b.log(); // log() is called by b object (log is on window obj)
+
+
+function ab() { 
+	this.newvariable = 'hello'; 
+}
+// console.log(newvariable); // ReferenceError: newvariable is not defined(…)
+ab(); // this = window
+console.log(newvariable); // hello
+
+
+var a = { 
+	name: '', 
+	log: function() { 
+		this.name = 'Hello'; 
+		console.log(this.name); // "Hello "
+		var setFrench = function(newname) { 
+					 this.name = newname;
+				} 
+		setFrench('Bonjour'); 
+		console.log(this.name); // "Hello"
+	} 
+} 
+a.log();
+
+var a = { 
+	name: '', 
+	log: function() { 
+		var self = this; // self = a Object
+		self.name = 'Hello'; 
+		console.log(self.name); // Hello
+		var setFrench = function(newname) { 
+					self.name = newname; 
+				} 
+		setFrench('Bonjour'); 
+		console.log(self.name); // Bonjour
+	} 
+} 
+a.log();
+
+
+/* const org = { 
+	addEmployee: function(){ 
+		console.log(this)
+		var ps = document.getElementById('one'); 
+		ps.click((emp)=>{
+			this.selectManager(emp)
+			console.log(this)
+		}); 
+	},
+	selectManager: function(emp){} 
+}; 
+
+// 1st this = org 
+// 2nd this = org 
+org.addEmployee(); 
+
+const addOrgEmployee = org.addEmployee; 
+// 1st this = window 
+// 2nd this = window 
+addOrgEmployee(); */
+
+
+var count = 99
+let counter = {
+	count: 0,
+	increment() {
+		var count = 10;
+		setTimeout(() => {console.log(++this.count);}, 1000)
+	}
+}
+let test = counter.increment;
+test()
+
+counter.increment()
