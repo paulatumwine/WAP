@@ -1,0 +1,8 @@
+body {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.counters {
+    margin-top: 2rem !important;
+}
