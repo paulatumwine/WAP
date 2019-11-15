@@ -5,13 +5,13 @@ import java.io.IOException;
 @WebFilter(filterName = "CounterFilter", urlPatterns = {"", "/", "/*"})
 public class CounterFilter implements Filter {
 
-    int counter = 1;
+    int counter = 0;
 
     public void destroy() {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        req.setAttribute("counter", this.counter++);
+        req.getServletContext().setAttribute("counter", ++this.counter);
         chain.doFilter(req, resp);
     }
 

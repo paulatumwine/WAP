@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-<%! int counter = 1; %>
 <div class="card">
     <div class="card-header">
         Thank You! Your message has been received as follows:
@@ -24,15 +23,15 @@
         <p class="card-text text-muted">Category: ${pageContext.request.getParameter("category")}</p>
         <p class="card-text text-muted">Message: ${pageContext.request.getParameter("message")}</p>
         <p class="card-text>&nbsp;</p>
-            <p class=" card-text>Please feel free to <a href="${pageContext.request.contextPath}/contact-us.jsp">Contact
+            <p class=" card-text>Please feel free to <a href="${pageContext.request.contextPath}/contact-us">Contact
             Us</a> again</p>
     </div>
 </div>
 <div class="counters">
-    <p class="text-muted float-left">Hit Count for this page: <%= counter++ %>
+    <p class="text-muted float-left">Hit Count for this page: ${pageContext.request.getAttribute("counter")}
     </p>
     <p class="text-muted float-right">Total Hit Count for the entire
-        WebApp: ${pageContext.request.getAttribute("counter")}</p>
+        WebApp: ${pageContext.servletContext.getAttribute("counter")}</p>
 </div>
 </body>
 </html>
