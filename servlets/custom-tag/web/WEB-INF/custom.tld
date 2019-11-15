@@ -1,0 +1,22 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Current Date Time</short-name>
+    <uri>/WEB-INF/custom.tld</uri>
+    <tag>
+        <description>Accepts two attributes (color and size) that prints the current date and time</description>
+        <name>currentDateTime</name>
+        <tag-class>edu.mum.wap.CurrentDateTime</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>color</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>size</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>
