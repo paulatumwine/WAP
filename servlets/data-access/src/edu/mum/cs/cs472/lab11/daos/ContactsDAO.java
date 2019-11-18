@@ -32,7 +32,31 @@ public class ContactsDAO {
         List<ContactFormData> list = new ArrayList<>();
         try {
             Connection connection = dataSource.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("SELECT contacts_id, customer_name, gender, category, message FROM `cs472-201911-lesson15-contacts-db`.contacts order by customer_name");
+            PreparedStatement pstmt = connection.prepareStatement("SELECT contacts_id, customer_name, gender, category, message FROM contacts order by customer_name");
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()) {
+                int contactsId = rs.getInt("contacts_id");
+                String name = rs.getString("customer_name");
+                String gender = rs.getString("gender");
+                String category = rs.getString("category");
+                String message = rs.getString("message");
+                ContactFormData data = new ContactFormData(contactsId, name, gender, category, message);
+                list.add(data);
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        return list;
+    }
+
+    public List<ContactFormData> searchContactFormData(String keywords) {
+        List<ContactFormData> list = new ArrayList<>();
+        try {
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("SELECT contacts_id, customer_name, gender, category, message FROM contacts where customer_name like ? or message like ? order by customer_name");
+            String value = String.format("%%%s%%", keywords);
+            pstmt.setString(1, value);
+            pstmt.setString(2, value);
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()) {
                 int contactsId = rs.getInt("contacts_id");
@@ -52,7 +76,7 @@ public class ContactsDAO {
     public ContactFormData saveContactFormData(ContactFormData contactFormData) {
         try {
             Connection connection = dataSource.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("insert into `cs472-201911-lesson15-contacts-db`.contacts (customer_name, gender, category, message) values (?, ?, ?, ?)");
+            PreparedStatement pstmt = connection.prepareStatement("insert into contacts (customer_name, gender, category, message) values (?, ?, ?, ?)");
             pstmt.setString(1, contactFormData.getName());
             pstmt.setString(2, contactFormData.getGender());
             pstmt.setString(3, contactFormData.getCategory());

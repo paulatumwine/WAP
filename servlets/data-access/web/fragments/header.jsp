@@ -23,8 +23,8 @@
                     <a class="nav-link" href="./browse-messages">Browse Messages</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <form class="form-inline my-2 my-lg-0" method="post" action="message-search">
+                <input class="form-control mr-sm-2" type="text" name="keywords" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
